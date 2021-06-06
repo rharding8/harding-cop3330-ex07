@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 1 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
 package base;
 
 import java.util.Scanner;
@@ -32,12 +37,28 @@ public class RoomArea {
 
   public double getLength(){
     System.out.print("What is the length of the room? ");
-    return input.nextDouble();
+    String n = input.next();
+    try {
+      Double.parseDouble(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Value. Try Again.");
+      return getLength();
+    }
+    return Double.parseDouble(n);
   }
 
   public double getWidth(){
     System.out.print("What is the width of the room? ");
-    return input.nextDouble();
+    String n = input.next();
+    try {
+      Double.parseDouble(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Value. Try Again.");
+      return getWidth();
+    }
+    return Double.parseDouble(n);
   }
 
   public String printArea(double length, double width, double area, String unitString){
